@@ -1,0 +1,282 @@
+.services-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+}
+
+/* Left side */
+.services-left{
+  display: flex;          /* ensure flex context */
+  flex-direction: column; /* stack children vertically */
+  align-items: stretch;   /* stretch children horizontally */
+  flex: 1;
+  padding: 1rem;
+  background: #fff;
+}
+
+.services-left .explore {
+  color: #007bff;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.services-left h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.services-left .highlight {
+  color: #0d2f6d;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* fills row */
+  gap: 2rem;
+  width: 100%;
+  height: 100%;          /* occupy full inline space */
+  align-items: stretch;  /* items fill track height */
+}
+
+
+/* .service-card {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+} */
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+  min-height: 250px; /* adjust as needed */
+  display: flex;
+   flex-direction: column; /* stack heading and details */
+  align-items: flex-start; /* heading aligns to left */
+  justify-content: center; /* center remaining content */
+  padding: 20px;
+  text-align: left; /* make text left-aligned */
+}
+
+/* Hidden image (appears only on hover) */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #f8f9fa;
+  /* background-image: var(--card-bg, none); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+  opacity: 0;
+  transform: translateX(-20px); /* slight slide-in effect */
+  transition: all .4s ease;
+  z-index: 0;
+}
+
+/* Show image on hover */
+.service-card:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Dark overlay for hover effect */
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,.25), rgba(0,0,0,.25));
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.service-card:hover::after {
+  opacity: 1;
+}
+
+.service-card h4,
+.service-card p,
+.service-card .service-icon {
+  position: relative;
+  z-index: 2; /* keep text above */
+  color: #0f172a;             /* base dark */
+  transition: color .25s ease;
+}
+
+/* optional: if the icon is an <i> using font icons, also ensure fill */
+.service-card .service-icon i {
+  color: inherit;             /* inherits from parent */
+  transition: color .25s ease;
+}
+
+/* optional: stronger overlay when hovering to ensure readability */
+.service-card:hover::after {
+  opacity: .55;               /* was 1; adjust to taste */
+}
+
+/* optional: give heading a bit more weight when hovered */
+.service-card:hover h4 {
+  font-weight: 700;
+}
+
+
+
+/* .service-card{
+  position: relative;
+  overflow: hidden;
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  transition: transform .3s ease, box-shadow .3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,.05);
+}
+
+.service-card::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image: var(--card-bg, none);  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;                               
+  transform: scale(1.05);
+  transition: opacity .3s ease;
+  filter: brightness(.7);                   
+}
+
+
+.service-card::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(0deg, rgba(0,0,0,.25), rgba(0,0,0,.25));
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+
+
+.service-card > *{ position: relative; z-index: 1; }
+
+.service-card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.1);
+}
+.service-card:hover::before,
+.service-card:hover::after{
+  opacity: 1;
+} */
+
+
+.service-icon {
+  font-size: 4rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+  flex-direction: column; 
+  justify-content: left;
+}
+
+.service-card h4 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  font-size: 1.95rem;
+  color: #555;
+  transition: color .25s ease;
+}
+
+.service-card:hover p {
+  color: black;
+}
+
+/* Right side */
+.services-right {
+  flex: 1;
+  position: relative;
+}
+
+.services-img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 50%;
+  background: rgba(13, 47, 109, 0.2); /* subtle overlay */
+}
+/* Vertical text styling */
+.vertical-text {
+  writing-mode: vertical-rl;
+  display: flex;
+  text-orientation: sideways-right;
+  transform: rotate(180deg);
+  font-size: clamp(11vw, 10vw, 90px); /* responsive: min 24px, max 100px */
+  font-weight: 00;
+  color: transparent;
+  -webkit-text-stroke: 1px #000; /* outlined text */
+  line-height: 0.9;
+  text-align: center;
+  justify-content: center;
+  white-space: nowrap; /* prevents wrapping */
+  /* width: 100%; */
+  /* min-height: 100vh; */
+  margin: 0;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+  .vertical-text {
+    font-size: clamp(18px, 6vw, 60px); /* slightly smaller for tablets */
+    -webkit-text-stroke: 1.5px #000;
+  }
+}
+
+@media (max-width: 576px) {
+  .vertical-text {
+    font-size: clamp(14px, 5vw, 40px); /* smaller for mobile */
+    -webkit-text-stroke: 1px #000;
+  }
+}
+
+.home-image{
+    min-height: 70vh;
+    width: 100vw;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 15%),
+url("../images/Screenshot 2025-08-30 001242.png");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+    overflow: hidden !important;
+}
+
+.home h2{
+    color: #fff;
+    font-size: 5.5rem;
+}

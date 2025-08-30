@@ -1,0 +1,155 @@
+.testimonials { padding: 4rem 1rem; }
+.section-header h2 { margin: 0 0 .5rem; }
+.section-header p { font-size: 1.125rem; color: #475569; }
+
+.testimonial-card{
+  max-width: 50%;
+  height: 250px;
+  margin: 2rem auto;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  grid-template-areas:
+    "avatar quote"
+    "avatar meta";
+  gap: 1rem 1.5rem;
+}
+.avatar{
+  grid-area: avatar;
+  width: 96px; height: 96px; border-radius: 50%; object-fit: cover;
+}
+.quote{ grid-area: quote; font-size: 2.25rem; line-height: 1; }
+.meta{ grid-area: meta; color: #64748b; font-size: 2rem; }
+.name{ margin: .25rem 0 0; font-size: 1.125rem; }
+.role{ margin: 0;font-size: 2.25rem; }
+
+.controls{
+  display:flex; align-items:center; justify-content:center; gap:1rem;margin: 1rem;padding: 1rem;
+}
+.btn-nav{
+  width: 50px; height: 50px; border-radius: 999px;
+  border: 1px solid #cbd5e1; background:#fff; cursor:pointer;
+}
+.dots{ display:flex; gap:.5rem; list-style:none; padding:0; margin:0 1rem; }
+.dot{
+  width:10px; height:10px; border-radius:999px; background:#cbd5e1; border:none; cursor:pointer;
+}
+.dot.active{ background:#0ea5e9; }
+
+/* a11y helper */
+.visually-hidden{
+  position:absolute !important; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+
+/* responsive */
+@media (max-width: 640px){
+  .testimonial-card{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "avatar"
+      "quote"
+      "meta";
+    text-align: center;
+  }
+  .avatar{ margin: 0 auto; }
+}
+
+.heading, .clients .section-header h2, .section-head h1, .testimonials .section-header h2, .section-head-1 h4{
+    margin: 2rem;
+    padding-top: 6rem;
+    display: inline-block;
+    font-size: 3.5rem;
+    color: #002e5f;
+    position: relative;
+    letter-spacing: .2rem;
+}
+.heading::before, .heading::after, .clients .section-header h2::before, .clients .section-header h2::after, .section-head h1::before, .section-head h1::after, .testimonials .section-header h2::before, .testimonials .section-header h2::after, .section-head-1 h4::before, .section-head-1 h4::after{
+    content: '';
+    position: absolute;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-top: .4rem solid #002e5f;
+    border-left: .4rem solid #002e5f;
+}
+.heading::before, .clients .section-header h2::before, .section-head h1::before, .testimonials .section-header h2::before, .section-head-1 h4::before{
+    top: 5.8rem;
+    left: -2rem;
+}
+
+.heading::after, .clients .section-header h2::after, .section-head h1::after, .testimonials .section-header h2::after, .section-head-1 h4::after{
+    bottom: -.5rem;
+    right: -2rem;
+    transform: rotate(180deg);
+}
+.testimonials {
+    position: relative;
+    padding: 1px 0 0px 0;
+    background: #f2f2f2;
+}
+
+.testimonials .testimonial-item {
+    position: relative;
+    margin: 0 15px 30px 15px;
+    background: #ffffff;
+}
+
+.testimonials .testimonial-img {
+    position: relative;
+    background: #000000;
+    overflow: hidden;
+}
+
+.testimonials .testimonial-text {
+    position: relative;
+    width: 100%;
+    padding: 30px 15px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.testimonials .testimonial-text h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.testimonials .testimonial-text h4 {
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.testimonials .testimonial-text p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.testimonials .owl-nav,
+.testimonials .owl-dots {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.testimonials .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #dddddd;
+}
+
+.testimonials .owl-dot.active {
+    background-color: #4F84C4;
+}
+
+@media (max-width: 575px) {
+    .testimonials .testimonial-text {
+        padding: 25px;
+    }
+}
