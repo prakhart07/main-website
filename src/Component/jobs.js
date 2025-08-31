@@ -174,8 +174,9 @@ function Jobs(){
           </button>
         ))}
       </nav>
-
+        <div>
       <JobPage data={job} />
+        </div>
     </div>
     </>
     )

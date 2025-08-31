@@ -16,6 +16,11 @@ html{
 
 body{
     overflow-x: hidden;
+    /* max-width: 100vw; */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 
 .heading, .clients .section-header h2, .section-head h1, .testimonials .section-header h2, .section-head-1 h4{
@@ -126,7 +131,7 @@ body{
     list-style-type: none;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: left;
 }
 
 .header .navbar ul li{
@@ -147,11 +152,22 @@ body{
     padding: 0.5rem;
 }
 
-.header .fa-bars{
-    color: #fff;
-    cursor: pointer;
-    font-size: 3rem;
-    display: none;
+.header .fa-bars {
+  position: fixed;      /* stays in one place */
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 3rem;
+  z-index: 1100;        /* above the navbar */
+  display: none;       /* make sure it's visible */
+}
+
+/* when active, turn into X */
+.header .fa-bars.active::before {
+  /* content: '✖';      */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 }
 
 .home{
@@ -1113,27 +1129,37 @@ body{
         color: #00bfff;
     }
 
-    .header .navbar {
-  position: fixed;
-  top: -120%;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  transition: top 0.4s ease-in-out;
+   .header .navbar {
+  position: fixed;       /* 🔑 keep it fixed on screen */
+  top: 0;
+  right: -250px;         /* hide off-screen (right side) */
+  width: 250px;
+  height: 100%;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  transition: right 0.3s ease-in-out;
   z-index: 1000;
-  border-top: .1rem solid rgba(0,0,0,.3);
 }
+
 .header .navbar.active {
-  top: 60px; /* adjust according to header height */
+  right: 0;              /* slide in */
 }
+
 .header .navbar.scrolled {
   background-color: #002366; /* dark blue */
   border-color: #001f4d; /* optional */
 }
+
     .header .navbar ul{
         height: 100%;
         width: 100%;
         flex-flow: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 40px;
     }
 
     .header .navbar ul li{

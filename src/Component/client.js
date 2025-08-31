@@ -13,16 +13,16 @@ import img11 from '../images/WhatsApp Image 2025-08-30 at 10.50.33 PM.jpeg';
 
 
 const logos = [
-  { image: img },
-  { image: img2 },
-  { image: img3 },
-  { image: img5 },
-  { image: img6 },
-  { image: img7 },
-  { image: img8 },
-  { image: img9 },
-  { image: img10 },
-  { image: img11 },
+    { image: img11 },
+    { image: img9 },
+    { image: img6 },
+    { image: img7 },
+    { image: img8 },
+    { image: img5 },
+    { image: img3 },
+    { image: img10 },
+    { image: img2 },
+    { image: img },
 ];
 
 function Clients() {

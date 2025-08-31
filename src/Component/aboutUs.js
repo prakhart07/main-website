@@ -5,7 +5,7 @@ function AboutUs(){
         <div>
         <section id="about-us" className="about-us">
           <h1>About GenkaiX</h1>
-          <h2>GenkaiX — Extend limits<br/>Genkai is the Japanese word 限界,meaning “limit”.The “X” stands for “extend.” <br/>Put together, Genkaix means “extend the limit”</h2>
+          <h2>GenkaiX — Extend limits<br/>Genkai is the Japanese word 限界,meaning “limit”.<br/>The “X” stands for “extend.” <br/>Put together, Genkaix means “extend the limit”</h2>
         </section>
         <section id="about-us-text" className="about-us-text">
           <h1 className="heading">Overview</h1>

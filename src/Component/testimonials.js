@@ -12,36 +12,36 @@ import image5 from '../images/testimonial-5.jpg';
  const testimonials = [
   {
     id: 1,
-    name: "Vicky kanade",
-    role: "CTO-Accuduck",
-    quote: "They delivered on time and exceeded expectations.",
+    name: "Vikas kanade",
+    role: "Accuduck",
+    quote: "Clear communication and great results.",
     avatar: image1
   },
   {
     id: 2,
-    name: "Person 2",
-    role: "Designation",
-    quote: "Clear communication and great results.",
+    name: "Manish",
+    role: "M.ark Design",
+    quote: "They delivered on time and exceeded expectations.",
     avatar: image2
   },
   {
     id: 3,
-    name: "Person 3",
-    role: "Designation",
+    name: "Vicky",
+    role: "UnitechAlgo",
     quote: "A reliable partner for our growth.",
     avatar: image3
   },
   {
     id: 4,
-    name: "Person 4",
-    role: "Designation",
+    name: "Rushikesh",
+    role: "Ad-Agency",
     quote: "Thoughtful strategy and clean execution.",
     avatar: image4
   },
   {
     id: 5,
-    name: "Person 5",
-    role: "Designation",
+    name: "Manoj",
+    role: "mDesiEng",
     quote: "Would recommend them to any founder.",
     avatar: image5
   }
@@ -109,7 +109,7 @@ useEffect(() => {
       </header>
 
       <div className="testimonial-card">
-        <img className="avatar" src={t.avatar} alt={`${t.name} photo`} />
+        {/* <img className="avatar" src={t.avatar} alt={`${t.name} photo`} /> */}
         <blockquote className="quote">“{t.quote}”</blockquote>
         <div className="meta">
           <h3 className="name">{t.name}</h3>

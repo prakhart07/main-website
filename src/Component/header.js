@@ -46,9 +46,9 @@ function Header(){
         <img src="./images/image.png" alt="Logo" />
       </a>
 
-      <i className="fas fa-bars"></i>
+      <i className="fas fa-bars"  onClick={toggleMenu}></i>
 
-      <nav className="navbar">
+      <nav className={`navbar ${menuOpen ? "active" : ""}`}>
         <ul>
           <li><a onClick={toHomePage}>home</a></li>
           <li><a onClick={toAboutUSPage}>about</a></li>

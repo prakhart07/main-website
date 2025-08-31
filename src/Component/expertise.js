@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import '../CSS/style.css';
+import '../CSS/careers.css';
 import img1 from '../images/generated-image (4).png'
 import img2 from '../images/generated-image (5).png'
 import img3 from '../images/generated-image (7).png'
