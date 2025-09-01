@@ -8,14 +8,16 @@ import img6 from '../images/Screenshot 2025-03-11 161513.png';
 import img7 from '../images/Screenshot 2025-08-30 224423.png';
 import img8 from '../images/logo.png';
 import img9 from '../images/logomarc.png';
+import img12 from '../images/horizon-logo.jpeg';
 import img10 from '../images/Blue_Rounded_Rectangle_Accounting_Logo-removebg-preview.png';
 import img11 from '../images/WhatsApp Image 2025-08-30 at 10.50.33 PM.jpeg';
 
 
 const logos = [
     { image: img11 },
-    { image: img9 },
+    { image: img12 },
     { image: img6 },
+    { image: img9 },
     { image: img7 },
     { image: img8 },
     { image: img5 },
@@ -26,17 +28,28 @@ const logos = [
 ];
 
 function Clients() {
+  const looped = [...logos,...logos,...logos];
   return (
-    <div className="carousel-container">
-      <div className="carousel-track">
-        {/* Duplicate logos for smooth infinite scroll */}
-        {logos.concat(logos).map((logo, index) => (
-          <div className="carousel-item" key={index}>
-            <img src={logo.image} alt={`client-${index}|| image`} />
+
+    <div className="logo-marquee">
+      <div className="logo-track">
+        {looped.map((src, i) => (
+          <div className="logo" key={i} aria-hidden={i >= logos.length}>
+            <img src={src.image} alt={`client-logo-${(i % logos.length) + 1}`} />
           </div>
         ))}
       </div>
     </div>
+    // <div className="carousel-container">
+    //   <div className="carousel-track">
+    //     {/* Duplicate logos for smooth infinite scroll */}
+    //     {logos.concat(logos).map((logo, index) => (
+    //       <div className="carousel-item" key={index}>
+    //         <img src={logo.image} alt={`client-${index}|| image`} />
+    //       </div>
+    //     ))}
+    //   </div>
+    // </div>
   );
 }
 

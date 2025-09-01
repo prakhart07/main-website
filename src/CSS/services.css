@@ -31,13 +31,14 @@
   color: #0d2f6d;
 }
 
+/* original service grid for 2x2 */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* fills row */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
   gap: 2rem;
   width: 100%;
-  height: 100%;          /* occupy full inline space */
-  align-items: stretch;  /* items fill track height */
+  height: 100%;          
+  align-items: stretch;  
 }
 
 
@@ -242,7 +243,8 @@
   white-space: nowrap; /* prevents wrapping */
   /* width: 100%; */
   /* min-height: 100vh; */
-  margin: 0;
+  margin: 2px;
+  opacity: 0.3;
 }
 
 /* Adjustments for small screens */
@@ -280,3 +282,71 @@ url("../images/Screenshot 2025-08-30 001242.png");
     color: #fff;
     font-size: 5.5rem;
 }
+
+.services-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem; /* spacing between rows */
+  padding: 2rem;
+}
+
+/* Use grid instead of flex for equal height */
+.services-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* image + content */
+  gap: 3rem;
+  align-items: stretch; /* make both columns equal height */
+}
+
+.services-row.reverse {
+  direction: ltr; /* flip order */
+}
+.services-row.reverse > * {
+  direction: rtl; /* reset child direction */
+}
+
+/* New Service Grid----- Content grid */
+/* .services-grid { */
+  /* display: grid; */
+  /* grid-template-columns: 1fr; stack services vertically */
+  /* grid-auto-rows: 1fr; equal height rows */
+  /* gap: 1.5rem; */
+/* } */
+
+/* Image container */
+.services-img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-img-container img {
+  width: 100%;
+  height: 100%; /* fills full column height */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+.services-img-container video {
+  width: 100%;
+  height: 100%; /* fills full column height */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .services-row {
+    grid-template-columns: 1fr; /* stack */
+  }
+
+  .services-row.reverse {
+    direction: ltr; /* reset for mobile */
+  }
+
+  .services-img-container img {
+    max-height: 250px; /* prevent overly tall on mobile */
+  }
+}
+

@@ -15,14 +15,17 @@ import SkillDevelopment from './Component/skillDevelopment';
 import Jobs from './Component/jobs';
 import ServicesPage from './Component/servicesPage';
 import AboutUs from './Component/aboutUs';
+import ScrollToTop from './Component/ScrollToTop';
 
 function App() {
   return (
     <div className="App">
       <Router>
-      <Header></Header>
+        <ScrollToTop/>
+      <Header/>
         <Routes>
           <Route path='/' element={<Mainscreen/>}></Route>
+          <Route path='/home' element={<Mainscreen/>}></Route>
           <Route path='/career' element={<Career/>}></Route>
           <Route path='/training' element={<SkillDevelopment/>}></Route>
           <Route path='/contact' element={<GetInTouch/>}></Route>
@@ -30,7 +33,7 @@ function App() {
           <Route path='/services' element={<ServicesPage/>}></Route>
           <Route path='/about' element={<AboutUs/>}></Route>
         </Routes>
-      <Footer></Footer>
+      <Footer/>
       </Router>
     </div>
   );

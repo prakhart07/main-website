@@ -10,7 +10,7 @@ function Footer(){
   }
 
   function toHomePage(){
-    Navigate('/');
+    Navigate('/home');
   }
   function toContactPage(){
     Navigate('/contact');

@@ -1,42 +1,50 @@
-.carousel-container {
+:root{
+  --gap: 32px;
+  --height: 70px;   /* logo row height */
+  --speed: 35s;     /* lower = faster */
+}
+
+/* viewport */
+.logo-marquee{
   width: 100%;
-  overflow: visible;
-  background: #f9f9f9;
-  padding: 30px 0;
+  overflow: hidden;
+  padding: 12px 0;
 }
 
-.carousel-track {
+/* moving strip */
+.logo-track{
   display: flex;
-  width: calc(5px * 11); 
-  animation: scroll 20s linear infinite;
-}
-
-.carousel-item {
-  flex: 0 0 300px;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 30px;
+  gap: var(--gap);
+  flex-wrap: nowrap;      /* one line */
+  animation: marquee var(--speed) linear infinite;
+  will-change: transform;
 }
 
-.carousel-item img {
-  max-width: 180px;
-  height: 120px;
-  animation:  scroll 21s linear infinite;
+/* each logo cell */
+.logo{
+  flex: 0 0 auto;         /* don't shrink */
 }
 
-/* Infinite scrolling effect */
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-80%);
-  }
+.logo img{
+  height: var(--height);
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
-/* Logo rotation */
-@keyframes spin {
-  0% { transform: rotateY(0deg); }
-  100% { transform: rotateY(360deg); }
+/* seamless loop: move one duplicate-width (-50%) */
+@keyframes marquee{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* optional: pause on hover */
+.logo-marquee:hover .logo-track{
+  animation-play-state: paused;
+}
+
+/* responsive tweaks */
+@media (max-width: 768px){
+  :root{ --gap: 20px; --height: 50px; --speed: 16s; }
 }

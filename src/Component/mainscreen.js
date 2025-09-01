@@ -17,9 +17,9 @@ function Mainscreen(){
       <Counter></Counter>
       <Services></Services>
       {/* <Expertise></Expertise> */}
+      <Clients></Clients>
       <Contact></Contact>
       <Testimonials></Testimonials>
-      <Clients></Clients>
       {/* <GetInTouch></GetInTouch> */}
       </>
     )

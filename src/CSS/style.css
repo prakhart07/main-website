@@ -121,8 +121,8 @@ body::-webkit-scrollbar {
 }
 
 .header .logo img{
-    width: 130%;
-    height: 3rem;
+    width: 7vw;
+    height: 5rem;
     top: 0;
     left: 0;
 }

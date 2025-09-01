@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import '../CSS/style.css';
 import { useNavigate } from 'react-router-dom';
+import logo from '../images/genkaix.png';
+
 function Header(){
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -42,8 +44,8 @@ function Header(){
 
     return(
        <header className={`header ${scrolled ? "scrolled" : ""}`}>
-      <a href="#" className="logo">
-        <img src="./images/image.png" alt="Logo" />
+      <a onClick={toHomePage} className="logo">
+        <img src={logo} alt="Logo" />
       </a>
 
       <i className="fas fa-bars"  onClick={toggleMenu}></i>

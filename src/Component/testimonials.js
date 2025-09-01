@@ -1,11 +1,7 @@
 // Testimonials.jsx
 import { useState, useRef, useEffect } from "react";
 import '../CSS/testimonials.css';
-import image1 from '../images/testimonial-1.jpg';
-import image2 from '../images/testimonial-2.jpg';
-import image3 from '../images/testimonial-3.jpg';
-import image4 from '../images/testimonial-4.jpg';
-import image5 from '../images/testimonial-5.jpg';
+
 // import '../CSS/style.css';
 
 // testimonials.data.js
@@ -14,36 +10,33 @@ import image5 from '../images/testimonial-5.jpg';
     id: 1,
     name: "Vikas kanade",
     role: "Accuduck",
-    quote: "Clear communication and great results.",
-    avatar: image1
+    quote: "A reliable partner for our growth.",
   },
   {
     id: 2,
     name: "Manish",
     role: "M.ark Design",
     quote: "They delivered on time and exceeded expectations.",
-    avatar: image2
   },
   {
     id: 3,
-    name: "Vicky",
-    role: "UnitechAlgo",
-    quote: "A reliable partner for our growth.",
-    avatar: image3
+    name: "Harsh",
+    role: "Horizonte Polaris-Spain",
+    quote: "Clear communication and great results.",
+    
   },
   {
     id: 4,
     name: "Rushikesh",
     role: "Ad-Agency",
     quote: "Thoughtful strategy and clean execution.",
-    avatar: image4
   },
   {
     id: 5,
     name: "Manoj",
     role: "mDesiEng",
     quote: "Would recommend them to any founder.",
-    avatar: image5
+  
   }
 ];
 
@@ -69,7 +62,7 @@ useEffect(() => {
 
   const id = setInterval(() => {
     setIndex((i) => (i + 1) % total);
-  }, 2000); // 4s per slide
+  }, 4000); // 4s per slide
 
   return () => clearInterval(id);
 }, [isPaused, total]);
