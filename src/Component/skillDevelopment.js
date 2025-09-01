@@ -6,6 +6,8 @@ import img2 from '../images/Blue White Modern Important Announcement Instagram P
 import img3 from '../images/Green White Illustrative Important Announcement Instagram Post_20250831_205034_0000.png';
 import img4 from '../images/Red Orange and Yellow Modern Job Fair Flyer_20250831_211052_0000.png';
 import img5 from '../images/Turquoise and Orange Retro Illustration Now Hiring Flyer_20250831_210114_0000.png';
+import img6 from '../images/Purple and White Professional Minimalist Digital Marketing Webinar Instagra_20250901_224030_0000.png';
+import img7 from '../images/Yellow and Blue Modern Marketing Course Sale Instagram Post_20250901_233948_0000.png';
 
 const events = [
   {
@@ -68,7 +70,15 @@ const events = [
     id: 8,
     category: "Development",
     title: "Core JAVA Certification",
-    image: img2,
+    image: img7,
+    date: "22nd September, 2025",
+    time: "4-5 Weeks",
+  },
+  {
+    id: 9,
+    category: "Interview",
+    title: "Campus Recruitment Training",
+    image: img6,
     date: "22nd September, 2025",
     time: "4-5 Weeks",
   },

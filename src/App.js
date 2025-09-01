@@ -16,6 +16,7 @@ import Jobs from './Component/jobs';
 import ServicesPage from './Component/servicesPage';
 import AboutUs from './Component/aboutUs';
 import ScrollToTop from './Component/ScrollToTop';
+import DbConnection from './API/dbConnection';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Header/>
         <Routes>
           <Route path='/' element={<Mainscreen/>}></Route>
+          <Route path='*' element={<Mainscreen/>}></Route>
           <Route path='/home' element={<Mainscreen/>}></Route>
           <Route path='/career' element={<Career/>}></Route>
           <Route path='/training' element={<SkillDevelopment/>}></Route>
@@ -32,6 +34,7 @@ function App() {
           <Route path='/jobs' element={<Jobs/>}></Route>
           <Route path='/services' element={<ServicesPage/>}></Route>
           <Route path='/about' element={<AboutUs/>}></Route>
+          {/* <Route path='/db' element={<DbConnection/>}></Route> */}
         </Routes>
       <Footer/>
       </Router>

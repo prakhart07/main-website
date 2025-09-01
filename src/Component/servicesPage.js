@@ -9,55 +9,55 @@ import { image } from "framer-motion/client";
 const services = [
   {
   title: "Website Design",
-  desc: "Modern, responsive websites built for speed, SEO, and conversion—launched fast and easy to update.",
+  desc: "Modern, responsive websites built for speed, SEO, and conversion—launched fast and easy to update",
   icon: "bi bi-laptop",
   image: cityImage
 },
 {
   title: "App developmment",
-  desc: "From MVP to scalable product—secure, performant apps with clean UX and robust APIs.",
+  desc: "From MVP to scalable product—secure, performant apps with clean UX and robust APIs",
   icon: "bi bi-phone",
   image: cityImage
 },
 {
   title: "Custom Software",
-  desc: "Tailored systems that streamline workflows and integrate with existing tools to cut manual work.",
+  desc: "Tailored systems that streamline workflows and integrate with existing tools to cut manual work",
   icon: "bi bi-cpu",
   image: cityImage
 },
 {
   title: "Cloud Services",
-  desc: "Migrate, optimize, and manage on AWS/GCP/Azure with secure, cost‑efficient architecture.",
+  desc: "Migrate, optimize, and manage on AWS/GCP/Azure with secure, cost‑efficient architecture",
   icon: "bi bi-cloud-arrow-up",
   image: cityImage
 },
 {
   title: "Database Migration",
-  desc: "Zero‑downtime planning, schema transformation, and data validation from legacy to modern DBs.",
+  desc: "Zero‑downtime planning, schema transformation, and data validation from legacy to modern DBs",
   icon: "bi bi-database-gear",
   image: cityImage
 },
 {
   title: "AI Modeling",
-  desc: "Turn data into predictions with ML pipelines—training, evaluation, and deployment to production.",
+  desc: "Turn data into predictions with ML pipelines—training, evaluation, and deployment to production",
   icon: "bi bi-robot",
   image: cityImage
 },
 {
   title: "Digital Marketing",
-  desc: "SEO, ads, and content that turn traffic into leads—with tracking and clear ROI reporting.",
+  desc: "SEO, ads, and content that turn traffic into leads—with tracking and clear ROI reporting",
   icon: "bi bi-graph-up-arrow",
   image: cityImage
 },
 {
   title: "Graphic Design",
-  desc: "Brand‑aligned visuals—social creatives, ads, pitch decks, and print assets that stand out.",
+  desc: "Brand‑aligned visuals—social creatives, ads, pitch decks, and print assets that stand out",
   icon: "bi bi-palette",
   image: cityImage
 },
 {
   title: "Tech Support",
-  desc: "Proactive monitoring and on‑call support to keep systems reliable and users productive.",
+  desc: "Proactive monitoring and on‑call support to keep systems reliable and users productive",
   icon: "bi bi-headset",
   image: cityImage
 }
