@@ -38,7 +38,7 @@ function Expertise(){
                     <div className="heading-wrapper">
                     <h5 className="card-heading">Placement Training</h5>
                   </div>
-                  <button className="btn enroll-btn" onClick={'onClickApply'}>Apply</button>
+                  <button className="btn enroll-btn" onClick={onClickApply}>Apply</button>
                   </div>
             </div>
             <div className="col-lg-4 col-sm-6">

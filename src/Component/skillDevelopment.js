@@ -1,60 +1,80 @@
 import { useState } from "react";
 // import '../CSS/style.css';
 import '../CSS/careers.css';
-import img1 from '../images/generated-image (4).png'
+import img1 from '../images/Yellow White Illustrative Gradient Important Announcement Instagram Post_20250831_192211_0000.png';
+import img2 from '../images/Blue White Modern Important Announcement Instagram Post_20250831_205631_0000.png';
+import img3 from '../images/Green White Illustrative Important Announcement Instagram Post_20250831_205034_0000.png';
+import img4 from '../images/Red Orange and Yellow Modern Job Fair Flyer_20250831_211052_0000.png';
+import img5 from '../images/Turquoise and Orange Retro Illustration Now Hiring Flyer_20250831_210114_0000.png';
 
 const events = [
   {
     id: 1,
-    category: "Career",
-    title: "The Harsh Truth: Your Career Plateau Isn’t Just Bad Luck",
+    category: "Marketing",
+    title: "Digital Marketing Certification",
     image: img1,
-    date: "Friday, 29 Aug, 2025",
-    time: "4:00pm to 5:00pm",
+    date: "22nd September, 2025",
+    time: "3-4 Weeks",
   },
   {
     id: 2,
-    category: "Marketing",
-    title: "From Marketing Executive to Digital Growth Leader",
-    image: img1,
-    date: "Friday, 29 Aug, 2025",
-    time: "5:00pm to 6:00pm",
+    category: "Development",
+    title: "HTML+CSS Certification",
+    image: img3,
+    date: "22nd September, 2025",
+    time: "2-3 Weeks",
   },
   {
     id: 3,
-    category: "AI",
-    title: "Automation & AI in Digital Marketing: From Leads to Loyalty",
-    image: img1,
-    date: "Friday, 29 Aug, 2025",
-    time: "8:00pm to 9:00pm",
+    category: "Development",
+    title: "JS+REACT Certification",
+    image: img3,
+    date: "22nd September, 2025",
+    time: "4-5 Weeks",
   },
   {
     id: 4,
-    category: "UI/UX",
-    title: "UI/UX Portfolio Mastery: Design & Present with Framer",
-    image: img1,
-    date: "Saturday, 30 Aug, 2025",
-    time: "10:00am to 12:00pm",
+    category: "Skills",
+    title: "Basic Computer Certification",
+    image: img4,
+    date: "22nd September, 2025",
+    time: "3-4 Weeks",
   },
   {
     id: 5,
-    category: "Marketing",
-    title: "10x your Social Media Growth",
-    image: img1,
-    date: "Saturday, 30 Aug, 2025",
-    time: "3:30pm to 5:30pm",
+    category: "Interview",
+    title: "Interview(Technical+HR)",
+    image: img5,
+    date: "22nd September, 2025",
+    time: "2-3 Weeks",
   },
   {
     id: 6,
+    category: "Interview",
+    title: "BPO Interview",
+    image: img5,
+    date: "22ndSeptember, 2025",
+    time: "1-2 Weeks",
+  },
+  {
+    id: 7,
     category: "Development",
-    title: "Becoming a Full Stack Developer: Step-by-Step Roadmap",
-    image: img1,
-    date: "Saturday, 30 Aug, 2025",
-    time: "6:00pm to 9:00pm",
+    title: "Data Structure & Algorithms Certification",
+    image: img2,
+    date: "22nd September, 2025",
+    time: "4-5 Weeks",
+  },
+  {
+    id: 8,
+    category: "Development",
+    title: "Core JAVA Certification",
+    image: img2,
+    date: "22nd September, 2025",
+    time: "4-5 Weeks",
   },
 ];
 
-const categories = ["All", "Career", "Marketing", "AI", "UI/UX", "Development"];
+const categories = ["All", "Skills", "Marketing", "Development","Interview"];
 
 function SkillDevelopment(){
 
@@ -92,7 +112,7 @@ function SkillDevelopment(){
   <div className="row g-4">
     {filteredEvents.map((event) => (
       <div key={event.id} className="col-md-4 my-3">
-        <div className="card h-100 shadow-lg">
+        <div className="card h-100 shadow-lg ">
           <img
             src={event.image}
             className="card-img-top"
@@ -101,11 +121,11 @@ function SkillDevelopment(){
           <div className="card-body">
             <h5 className="card-title">{event.title}</h5>
             <p className="card-text">
-              <i className="bi bi-calendar-event"></i> {event.date}
+              <i className="bi bi-calendar-event"></i> New Batch: {event.date}
               <br />
-              <i className="bi bi-clock"></i> {event.time}
+              <i className="bi bi-clock"></i> Course Duration: {event.time}
             </p>
-            <button className="btn btn-danger w-100">Register Now</button>
+            <button className="btn">Register Now</button>
           </div>
         </div>
       </div>

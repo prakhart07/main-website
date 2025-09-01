@@ -27,41 +27,46 @@ function Header(){
 
   function toCareerPage(){
     Navigate('/career');
+    toggleMenu();
   }
 
   function toHomePage(){
     Navigate('/');
+    toggleMenu();
   }
   function toContactPage(){
     Navigate('/contact');
+    toggleMenu();
   }
   function toServicePage(){
     Navigate('/services');
+    toggleMenu();
   }
   function toAboutUSPage(){
     Navigate('/about');
+    toggleMenu();
   }
 
     return(
        <header className={`header ${scrolled ? "scrolled" : ""}`}>
-      <a onClick={toHomePage} className="logo">
-        <img src={logo} alt="Logo" />
-      </a>
+            <a onClick={toHomePage} className="main-logo">
+              <img src={logo} alt="Logo" />
+            </a>
 
-      <i className="fas fa-bars"  onClick={toggleMenu}></i>
+            <i className="fas fa-bars"  onClick={toggleMenu}></i>
 
-      <nav className={`navbar ${menuOpen ? "active" : ""}`}>
-        <ul>
-          <li><a onClick={toHomePage}>home</a></li>
-          <li><a onClick={toAboutUSPage}>about</a></li>
-          <li><a onClick={toServicePage}>services</a></li>
-          {/* <li><a href="#portfolio">portfolio</a></li>
-          <li><a href="#team">team</a></li> */}
-          <li><a onClick={toCareerPage}>career</a></li>
-          <li><a onClick={toContactPage}>contact</a></li>
-          {/* <li><a href="#faq">FAQ</a></li> */}
-        </ul>
-      </nav>
+            <nav className={`navbar ${menuOpen ? "active" : ""}`}>
+              <ul>
+                <li><a onClick={toHomePage}>home</a></li>
+                <li><a onClick={toAboutUSPage}>about</a></li>
+                <li><a onClick={toServicePage}>services</a></li>
+                {/* <li><a href="#portfolio">portfolio</a></li>
+                <li><a href="#team">team</a></li> */}
+                <li><a onClick={toCareerPage}>career</a></li>
+                <li><a onClick={toContactPage}>contact</a></li>
+                {/* <li><a href="#faq">FAQ</a></li> */}
+              </ul>
+            </nav>
     </header>
     )
 }
