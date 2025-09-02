@@ -1,10 +1,16 @@
 import React from "react";
 import '../CSS/careers.css';
+import { useNavigate } from "react-router-dom";
 
 
 export default function JobPage({ data }) {
+  const Navigate=useNavigate();
   if (!data) return null;
 
+
+  function applyPage(){
+    Navigate('/apply');
+  }
   return (
     <main className="wrap" aria-labelledby="job-title">
       <article className="job-card">
@@ -40,7 +46,7 @@ export default function JobPage({ data }) {
         </section>
 
         <footer className="card-footer">
-          <button type="button" className="apply-btn" aria-label={`Apply for ${data.title}`}>
+          <button type="button" className="apply-btn" aria-label={`Apply for ${data.title}`} onClick={applyPage}>
             {data.ctaLabel}
           </button>
         </footer>

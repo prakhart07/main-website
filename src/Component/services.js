@@ -4,9 +4,17 @@ import img2 from '../images/generated-image (17).png'
 import img3 from '../images/generated-image (21).png'
 import img4 from '../images/generated-image (20).png'
 import img5 from '../images/app-dev.png';
+import { useNavigate } from 'react-router-dom';
 
-const service=[{image:img1},{image:img2},{image:img3},{image:img4}]
+const service=[{image:img1},{image:img2},{image:img3},{image:img4}];
+
 function Services(){
+
+  const Navigate=useNavigate();
+
+  function toServicePage(){
+    Navigate('/services');
+  }
     return(
         <div className="pt-5 pb-5 border-t" style={{backgroundColor: '#f5f5f5'}}>
         <div className="container">
@@ -30,7 +38,7 @@ function Services(){
                 </div>
               ))}
                 <div className="col-12 text-center mt-3">
-                <button className="btn">Services</button>
+                <button className="btn" onClick={toServicePage}>Services</button>
                 </div>
           </div>
         </div>

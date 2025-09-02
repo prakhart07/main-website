@@ -99,7 +99,7 @@ function SkillDevelopment(){
              <div>
                 <div>
                         <section id="home" className="home">
-                    <h2>Home / Careers</h2>
+                    <h2>Careers</h2>
                 </section>
                 </div>
       {/* Category Filter */}
