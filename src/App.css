@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.page-container {
+  max-width: 900px;
+  margin: 100px auto 50px; /* pushed below header */
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  line-height: 1.7;
+}
+
+.page-container h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.page-container h2 {
+  font-size: 20px;
+  margin-top: 20px;
+  color: #444;
+}
+
+.page-container p {
+  color: #555;
+  margin-bottom: 12px;
+}

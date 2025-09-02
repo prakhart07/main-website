@@ -27,6 +27,12 @@ function Footer(){
   function toJobPage(){
     Navigate('/jobs');
   }
+  function toTermsPage(){
+    Navigate('/terms');
+  }
+  function toPrivacyPage(){
+    Navigate('/privacy');
+  }
 
     return(
         <div className="footer">
@@ -52,8 +58,8 @@ function Footer(){
                 <ul>
                   <li><i className="ion-ios-arrow-forward" /> <a onClick={toJobPage}>Internships</a></li>
                   <li><i className="ion-ios-arrow-forward" /> <a onClick={toTrainingPage}>Courses</a></li>
-                  <li><i className="ion-ios-arrow-forward" /> <a >Terms &amp; condition</a></li>
-                  <li><i className="ion-ios-arrow-forward" /> <a >Privacy policy</a></li>
+                  <li><i className="ion-ios-arrow-forward" /> <a onClick={toTermsPage}>Terms &amp; condition</a></li>
+                  <li><i className="ion-ios-arrow-forward" /> <a onClick={toPrivacyPage}>Privacy policy</a></li>
                   <li><i className="ion-ios-arrow-forward" /> <a >FAQ</a></li>
                 </ul>
               </div>

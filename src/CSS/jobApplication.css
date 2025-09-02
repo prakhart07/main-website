@@ -1,8 +1,9 @@
 .job-form-container {
   max-width: 600px;
   margin: 3rem auto;
+  margin-top: 2rem;
   padding: 2rem;
-  background: #ffffff;
+  background: rgb(245, 245, 245);;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -48,7 +49,7 @@
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: #007bff;
-  outline: none;
+  outline: #333;
 }
 
 .submit-btn {

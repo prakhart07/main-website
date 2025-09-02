@@ -18,6 +18,8 @@ import AboutUs from './Component/aboutUs';
 import ScrollToTop from './Component/ScrollToTop';
 import DbConnection from './API/dbConnection';
 import JobApplication from './Component/jobApplication';
+import TermsAndConditions from './Component/terms&condition';
+import PrivacyPolicy from './Component/privacyPolicy';
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
           <Route path='/services' element={<ServicesPage/>}></Route>
           <Route path='/about' element={<AboutUs/>}></Route>
           <Route path='/apply' element={<JobApplication/>}></Route>
+          <Route path='/terms' element={<TermsAndConditions/>}></Route>
+          <Route path='/privacy' element={<PrivacyPolicy/>}></Route>
           {/* <Route path='/db' element={<DbConnection/>}></Route> */}
         </Routes>
       <Footer/>

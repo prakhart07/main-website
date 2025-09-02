@@ -142,6 +142,10 @@ const services = [
         <div className="services-wrapper">
           {/* 🔹 First Row */}
           <div className="services-row">
+            <div className="services-img-container">
+              {/* <img src={cityImage} alt="services-right" /> */}
+              <video src={vid1} alt="services-right" autoPlay muted loop playsInline preload="auto"/>
+            </div>
             <div className="services-grid">
               {firstRow.map((service, idx) => (
                 <div className="service-card" key={idx}>
@@ -152,10 +156,6 @@ const services = [
                   <p>{service.desc}</p>
                 </div>
               ))}
-            </div>
-            <div className="services-img-container">
-              {/* <img src={cityImage} alt="services-right" /> */}
-              <video src={vid1} alt="services-right" autoPlay muted loop playsInline preload="auto"/>
             </div>
           </div>
   

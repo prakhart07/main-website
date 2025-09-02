@@ -5,7 +5,7 @@ function FormPage(){
     return(
         <div className="career">
           <div className="career-form">
-            <form action="./careers.php" method="POST" encType="multipart/form-data">
+            <form  encType="multipart/form-data">
               <input type="text" name="name" placeholder="Name" className="career-form-txt" required />
               <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxLength={10} className="career-form-phone" />
               <input type="email" name="email" placeholder="Email" className="career-form-email" required />

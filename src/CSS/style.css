@@ -116,7 +116,7 @@ body::-webkit-scrollbar {
 
 /* background after scroll */
 .header.scrolled {
-  background-color: grey; /* change to dark blue */
+  background-color: rgb(199, 221, 234); /* change to dark blue */
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
@@ -1132,6 +1132,7 @@ body::-webkit-scrollbar {
         display: block;
         color: 	white;
         margin-right: 1rem;
+        margin-top: 0.5rem;
         
     }
 
