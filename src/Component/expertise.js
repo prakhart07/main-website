@@ -19,7 +19,7 @@ function Expertise(){
         <div className="container">
           <div className="row">
             <div className="section-head-1 col-sm-12" style={{textAlign: 'center'}}>
-              <h4 style={{marginTop: '-5rem'}} id="portfolio"><span></span>Career</h4>
+              <h4 style={{marginTop: '-5rem'}} id="portfolio"><span></span>opportunities</h4>
               <p>The objective of Genkaix is to enable a large number of youth to take up <br />industry-relevant skill training that will help them<br /> in securing a better livelihood.
               </p>
             </div>

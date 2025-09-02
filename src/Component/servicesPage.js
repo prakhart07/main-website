@@ -60,6 +60,12 @@ const services = [
   desc: "Proactive monitoring and on‑call support to keep systems reliable and users productive",
   icon: "bi bi-headset",
   image: cityImage
+},
+{
+  title: "Learning Program",
+  desc: " Structured training and mentorship to upskill teams in the latest technologies and best practices",
+  icon: "bi bi-book",
+  image: cityImage
 }
 
 ];
@@ -137,8 +143,10 @@ const services = [
   
     return (
       <>
-        <section id="home" className="home-image"></section>
-  
+        <section id="home" className="home">
+          <h2>Services</h2>
+        </section>
+        {/* <h4 >Services</h4> */}
         <div className="services-wrapper">
           {/* 🔹 First Row */}
           <div className="services-row">
@@ -161,10 +169,6 @@ const services = [
   
           {/* 🔹 Second Row */}
           <div className="services-row reverse">
-            <div className="services-img-container">
-              {/* <img src={cityImage} alt="services-right" /> */}
-              <video src={vid2} alt="services-right" autoPlay muted loop playsInline preload="auto"/>
-            </div>
             <div className="services-grid">
               {secondRow.map((service, idx) => (
                 <div className="service-card" key={idx}>
@@ -175,6 +179,10 @@ const services = [
                   <p>{service.desc}</p>
                 </div>
               ))}
+            </div>
+            <div className="services-img-container">
+              {/* <img src={cityImage} alt="services-right" /> */}
+              <video src={vid2} alt="services-right" autoPlay muted loop playsInline preload="auto"/>
             </div>
           </div>
         </div>

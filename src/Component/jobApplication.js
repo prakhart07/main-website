@@ -6,10 +6,17 @@ function JobApplication (){
     post: "",
     name: "",
     fatherName: "",
-    contact: "",
+    phone: "",
     email: "",
     address: "",
     qualification: "",
+    degreeStatus:"",
+    institute:"",
+    year:"",
+    percentage:"",
+    link:"",
+    resume:""
+
   });
 
   const handleChange = (e) => {
@@ -45,7 +52,7 @@ function JobApplication (){
             <option value="GD">Graphic Designer Intern</option>
             <option value="UI/UX">UI/UX Intern</option>
             <option value="HR">HR Intern/Trainee</option>
-            <option value="Manager">Management Trainee</option>
+            <option value="MngTr">Management Trainee</option>
           </select>
         </div>
 
@@ -93,6 +100,11 @@ function JobApplication (){
                 <option value="Er pg">M.E./M.Tech</option>
                 <option value="Other">Other</option>
               </select>
+        </div>
+
+        <div className="form-group">
+          <label>Institue</label>
+          <input name="institute" value={formData.institute} onChange={handleChange} required />
         </div>
 
         <div className="form-group">

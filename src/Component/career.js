@@ -14,7 +14,7 @@ function Career(){
     return(
         <div>
         <section id="home" className="home">
-          <h2>Home / Careers</h2>
+          <h2>Careers</h2>
         </section>
         {/* <section id="career-heading" className="career-heading">
           <h1 className="heading">Career</h1>

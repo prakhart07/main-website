@@ -266,7 +266,7 @@
     min-height: 70vh;
     width: 100vw;
     background-image: linear-gradient(to bottom, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 15%),
-url("../images/Screenshot 2025-08-30 001242.png");
+url("../images/home-bg.png");
     background-size: cover;
     display: flex;
     align-items: center;
@@ -302,7 +302,7 @@ url("../images/Screenshot 2025-08-30 001242.png");
   direction: ltr; /* flip order */
 }
 .services-row.reverse > * {
-  direction: rtl; /* reset child direction */
+  direction: ltr; /* reset child direction */
 }
 
 /* New Service Grid----- Content grid */

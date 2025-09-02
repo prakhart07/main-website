@@ -102,6 +102,9 @@ function SkillDevelopment(){
                     <h2>Careers</h2>
                 </section>
                 </div>
+                <div>
+                  <h2 style={{textAlign: 'center', marginTop: '2rem', marginBottom: '1rem'}} className="heading"> Skill Development Programs</h2>
+                </div>
       {/* Category Filter */}
       <div className="col-12 d-flex flex-wrap justify-content-center gap-4 my-4">
         {categories.map((cat) => (

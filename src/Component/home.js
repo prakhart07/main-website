@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import '../CSS/style.css';
+import NewsModal from './newsModal';
 
 function Home(){
   const Navigate=useNavigate();
@@ -9,6 +10,7 @@ function Home(){
   }
     return(
         <div>
+          <NewsModal/>
         <section id="home" className="home">
           <h1>Bring your Business Online</h1>
           <h2>with GenkaiX IT Services</h2>

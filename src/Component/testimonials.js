@@ -8,7 +8,7 @@ import '../CSS/testimonials.css';
  const testimonials = [
   {
     id: 1,
-    name: "Vikas kanade",
+    name: "Vikash kanade",
     role: "Accuduck",
     quote: "A reliable partner for our growth.",
   },
@@ -103,7 +103,7 @@ useEffect(() => {
 
       <div className="testimonial-card">
         {/* <img className="avatar" src={t.avatar} alt={`${t.name} photo`} /> */}
-        <blockquote className="quote">“{t.quote}”</blockquote>
+        <blockquote className="quote">{t.quote}</blockquote>
         <div className="meta">
           <h3 className="name">{t.name}</h3>
           <p className="role">{t.role}</p>

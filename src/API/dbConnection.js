@@ -7,7 +7,6 @@ const KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6
 const supabase = createClient(URL, KEY);
 
 export async function saveContact(data){
-
     
 const { res, err } = await supabase
   .from('contactUs')
@@ -15,10 +14,44 @@ const { res, err } = await supabase
     { name: data.name, contact:data.phone, email:data.email,message:data.message },
   ])
   .select()
-
   return res;
-          
 }
+
+export async function saveApplication(data){
+    
+const { res, err } = await supabase
+  .from('applications')
+  .insert([
+    { post: data.post, 
+      name: data.name,
+      fatherName: data.fathername, 
+      phone:data.phone, 
+      email:data.email,
+      address:data.address,
+      qualification: data.qualification,
+      institute: data.institute,
+      year: data.year,
+      percentage: data.percentage,
+      degreeStatus: data.degreeStatus,
+      link: data.link,
+    },
+  ])
+  .select()
+  return res;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function DbConnection() {
 //   const [instruments, setInstruments] = useState([]);

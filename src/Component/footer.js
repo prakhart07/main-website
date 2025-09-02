@@ -1,38 +1,50 @@
 import { useNavigate } from 'react-router-dom';
 import '../CSS/style.css';
+import { useState } from 'react';
 
 function Footer(){
 
     const Navigate=useNavigate();
+    const [contactNumber, setContactNumber] = useState('');
+    const [submitted, setSubmitted] = useState(false);
 
     function toCareerPage(){
-    Navigate('/career');
-  }
+      Navigate('/career');
+    }
 
-  function toHomePage(){
-    Navigate('/home');
-  }
-  function toContactPage(){
-    Navigate('/contact');
-  }
-  function toServicePage(){
-    Navigate('/services');
-  }
-  function toAboutUSPage(){
-    Navigate('/about');
-  }
-  function toTrainingPage(){
-    Navigate('/training');
-  }
-  function toJobPage(){
-    Navigate('/jobs');
-  }
-  function toTermsPage(){
-    Navigate('/terms');
-  }
-  function toPrivacyPage(){
-    Navigate('/privacy');
-  }
+    function toHomePage(){
+      Navigate('/home');
+    }
+    function toContactPage(){
+      Navigate('/contact');
+    }
+    function toServicePage(){
+      Navigate('/services');
+    }
+    function toAboutUSPage(){
+      Navigate('/about');
+    }
+    function toTrainingPage(){
+      Navigate('/training');
+    }
+    function toJobPage(){
+      Navigate('/jobs');
+    }
+    function toTermsPage(){
+      Navigate('/terms');
+    }
+    function toPrivacyPage(){
+      Navigate('/privacy');
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      if (contactNumber.trim()) {
+        setSubmitted(true);
+        setContactNumber('');
+        setTimeout(() => setSubmitted(false), 3000);
+      }
+    }
 
     return(
         <div className="footer">
@@ -50,7 +62,6 @@ function Footer(){
                     <li><i className="ion-ios-arrow-forward" /><a onClick={toCareerPage}>career</a></li>
                     <li><i className="ion-ios-arrow-forward" /><a onClick={toContactPage}>contact</a></li>
                     {/* <li><a href="#faq">FAQ</a></li> */}
-                
                 </ul>
               </div>
               <div className="col-lg-3 col-md-6 footer-links">
@@ -87,6 +98,24 @@ function Footer(){
                 <form action method="post">
                   <input type="email" name="email" /><input type="submit" defaultValue="Subscribe" />
                 </form>
+              </div> */}
+              {/* <div className="col-lg-3 col-md-6 footer-call">
+                <h4 className="footer-call-heading">Expect a call from us</h4>
+                <form className="footer-call-form" onSubmit={handleContactSubmit}>
+                  <input
+                    type="tel"
+                    className="contact-form-phone"
+                    placeholder="Enter your contact number"
+                    value={contactNumber}
+                    onChange={e => setContactNumber(e.target.value)}
+                  />
+                  <button type="submit" className="footer-call-btn">Submit</button>
+                </form>
+                {submitted && (
+                  <div className="footer-call-success">
+                    Thank you! We will contact you soon.
+                  </div>
+                )}
               </div> */}
             </div>
           </div>
