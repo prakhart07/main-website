@@ -2,8 +2,11 @@ import { useState } from 'react';
 import '../CSS/style.css';
 import { saveContact } from '../API/dbConnection';
 import { ToastContainer,toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 function GetInTouch(){
+
+  const Navigate=useNavigate();
 
   const [contact,setContact]=useState({name:'',phone:'',email:'',message:''});
 
@@ -15,9 +18,16 @@ function GetInTouch(){
    try {
 const res = await saveContact(contact); // waits here
 // optionally verify success, e.g., res.ok or res.status / res.success
-toast('SUCCESS!'); // then toast
+ toast.success("Thank you for contacting GENKAIX. The team will review and reply soon", {
+      onClose: () => {
+        // ✅ Navigate only after toast closes
+        setContact({name:'',phone:'',email:'',message:''});
+        // Navigate("/contact");
+      },
+      autoClose: 3000, // show for 3 sec
+    }); // then toast
 } catch (err) {
-toast( err.message || 'BAD REQUEST'); // error toast
+toast( err.message || 'Something Went Wrong'); // error toast
 }
     }
     // console.log("response from db:",res.then((res)=>{
@@ -44,10 +54,10 @@ toast( err.message || 'BAD REQUEST'); // error toast
           </div>
           <div className="contact-form">
             <>
-              <input type="text" name="name" placeholder="Name" className="contact-form-txt" required onChange={handleOnChange} />
-              <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxLength={10} className="contact-form-phone" onChange={handleOnChange}/>
-              <input type="email" name="email" placeholder="Email" className="contact-form-email" required onChange={handleOnChange}/>
-              <textarea placeholder="Your Message" name="message" className="contact-form-txtarea" required defaultValue={""} onChange={handleOnChange}/>
+              <input type="text" name="name" placeholder="Name" className="contact-form-txt" value={contact.name} required onChange={handleOnChange} />
+              <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" value={contact.phone} maxLength={10} className="contact-form-txt" onChange={handleOnChange}/>
+              <input type="email" name="email" placeholder="Email" className="contact-form-txt" value={contact.email} required onChange={handleOnChange}/>
+              <textarea placeholder="Your Message" name="message" className="contact-form-txtarea" value={contact.message} required defaultValue={""} onChange={handleOnChange}/>
               <button className="contact-form-btn" onClick={handleSubmit}>Submit</button>
               <ToastContainer/>
             </>

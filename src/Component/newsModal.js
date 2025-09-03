@@ -19,7 +19,7 @@ const NewsModal = () => {
       {isOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <button className="close-btn" onClick={closeModal}>
+            <button className="close-btn-news" onClick={closeModal}>
               &times;
             </button>
             <img

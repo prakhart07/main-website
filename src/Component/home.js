@@ -12,8 +12,8 @@ function Home(){
         <div>
           <NewsModal/>
         <section id="home" className="home">
-          <h1>Bring your Business Online</h1>
-          <h2>with GenkaiX IT Services</h2>
+          {/* <h1>Bring your Business Online</h1>
+          <h2>with GenkaiX IT Services</h2> */}
           <div className="wave wave1" />
           <div className="wave wave2" />
           <div className="wave wave3" />

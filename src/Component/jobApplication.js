@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import "../CSS/jobApplication.css";
+import { saveApplication, saveFile } from "../API/dbConnection";
+import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 function JobApplication (){
+
+  const Navigate=useNavigate(); 
+  const [resumeFile, setResumeFile] = useState(null);
   const [formData, setFormData] = useState({
     post: "",
     name: "",
@@ -15,8 +21,7 @@ function JobApplication (){
     year:"",
     percentage:"",
     link:"",
-    resume:""
-
+    resumeURL:""
   });
 
   const handleChange = (e) => {
@@ -25,21 +30,65 @@ function JobApplication (){
       [e.target.name]: e.target.value,
     });
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form Submitted:", formData);
-    alert("Application submitted successfully!");
+  const handleFileChange = (e) => {
+    setResumeFile(e.target.files[0]);
   };
+
+  async function handleSubmit(e) {
+  e.preventDefault();
+  console.log("Form Submitted:", formData);
+
+  const resumeURLRecieved = await saveFile(resumeFile);
+
+  if (resumeURLRecieved) {
+    console.log("url from db:", resumeURLRecieved);
+
+    // ✅ create updated formData with resume URL
+    const updatedFormData = {
+      ...formData,
+      resumeURL: resumeURLRecieved.fullPath, // or resumeURLRecieved.publicUrl if you want direct URL
+    };
+
+    setFormData(updatedFormData); // update state for UI consistency
+
+    console.log("resume saved now proceeding");
+    handleApplicationSave(updatedFormData); // ✅ pass updated data directly
+  } else {
+    console.log("Error in file upload:");
+    alert("resume save failed");
+  }
+}
+
+function handleApplicationSave(dataToSave) {
+  console.log("calling application saving api", dataToSave);
+  alert("info saving func");
+
+  const res = saveApplication(dataToSave);
+
+  if (res) {
+     toast.success("Application Submitted Successfully!", {
+      onClose: () => {
+        // ✅ Navigate only after toast closes
+        Navigate("/jobs");
+      },
+      autoClose: 3000, // show for 3 sec
+    });
+  } else {
+    toast("Error in submitting application. Please try again.");
+    alert("info save failed");
+  }
+}
+
 
   return (
     <div className="job-form-container">
+      
       <h2 className="form-title">Job Application Form</h2>
-      <form className="job-form" onSubmit={handleSubmit}>
+      <form className="job-form">
         
         {/* Post Selection */}
         <div className="form-group">
-          <label htmlFor="post">Select Post</label>
+          <label >Select Post</label>
           <select
             id="post"
             name="post"
@@ -69,7 +118,7 @@ function JobApplication (){
 
         <div className="form-group">
           <label>Contact</label>
-          <input type="tel" name="contact" value={formData.contact} onChange={handleChange} required />
+          <input type="text" name="phone" value={formData.phone} onChange={handleChange} required />
         </div>
 
         <div className="form-group">
@@ -113,10 +162,10 @@ function JobApplication (){
             <label>
               <input
                 type="radio"
-                name="status"
+                name="degreeStatus"
                 value="Pursuing"
                 disabled={!formData.qualification} 
-                checked={formData.status === "Pursuing"}
+                checked={formData.degreeStatus === "Pursuing"}
                 onChange={handleChange}
               />
               Pursuing
@@ -124,10 +173,10 @@ function JobApplication (){
             <label>
               <input
                 type="radio"
-                name="status"
+                name="degreeStatus"
                 value="Passed"
                 disabled={!formData.qualification} 
-                checked={formData.status === "Passed"}
+                checked={formData.degreeStatus === "Passed"}
                 onChange={handleChange}
               />
               Passed
@@ -135,13 +184,13 @@ function JobApplication (){
           </div>
         </div>
 
-        {formData.qualification !== "" && formData.status === "Passed"  && (
+        {formData.qualification !== "" && formData.degreeStatus === "Passed"  && (
           <div className="form-group passed-extra">
             <label>Passing Year</label>
             <select
               id="passingYear"
-              name="passingYear"
-              value={formData.passingYear}
+              name="year"
+              value={formData.year}
               onChange={handleChange}
             >
               <option value="">-- Select Year --</option>
@@ -174,14 +223,9 @@ function JobApplication (){
             <input
               type="file"
               name="resume"
-              accept=".pdf,.doc,.docx"
+              accept=".pdf"
               required
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  resume: e.target.files[0], // store file object
-                })
-              }
+              onChange={handleFileChange}
             />
             {formData.resume && (
               <p style={{ fontSize: "14px", color: "green" }}>
@@ -196,16 +240,17 @@ function JobApplication (){
             <label>Portfolio Link</label>
             <input
               type="url"
-              name="portfolio"
+              name="link"
               placeholder="https://yourportfolio.com"
-              value={formData.portfolio || ""}
+              value={formData.link || ""}
               onChange={handleChange}
               
             />
           </div>
 
-        <button type="submit" className="submit-btn">Submit Application</button>
+        <button  className="submit-btn" onClick={handleSubmit}>Submit Application</button>
       </form>
+      <ToastContainer />
     </div>
   );
 };

@@ -281,6 +281,7 @@ url("../images/home-bg.png");
 .home h2{
     color: #fff;
     font-size: 5.5rem;
+    margin-top: 5rem;
 }
 
 .services-wrapper {

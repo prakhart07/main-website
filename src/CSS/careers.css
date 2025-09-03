@@ -34,6 +34,9 @@ body{
     width: 100vw;
     background-image: url(../images/home-bg.png);
     background-size: cover;
+     background-size: cover;        /* scale to cover screen */
+    background-position: center;   /* keep center visible */
+    background-repeat: no-repeat;  /* no repeat */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -276,12 +279,11 @@ body{
         font-size: 50%;
     }
 
-    
 
-    
 
     .home{
         min-height: 60vh;
+        object-fit: contain;
     }
 
     .home h2{

@@ -4,8 +4,8 @@ function AboutUs(){
     return(
         <div>
         <section id="about-us" className="about-us">
-          <h1>About GenkaiX</h1>
-          <h2>GenkaiX — Extend limits<br/>Genkai is the Japanese word 限界,meaning “limit”.<br/>The “X” stands for “extend.” <br/>Put together, Genkaix means “extend the limit”</h2>
+          <h1>GenkaiX — Extend limits</h1>
+          <h2>Master the skills, Drive the transformation</h2>
         </section>
         <section id="about-us-text" className="about-us-text">
           <h1 className="heading">Overview</h1>
@@ -18,7 +18,8 @@ function AboutUs(){
               <p>Websites and product UIs that are fast, accessible, and easy to update.<br />
                  Custom software and integrations that remove manual work and reduce risk.<br />
                  Cloud, data, and AI support to make systems scalable and insights useful.<br/>
-                 Digital Marketing and Graphic design which elevate the user experience.</p>
+                 Digital Marketing and Graphic design which elevate the user experience.<br/>
+                 Learning Programs to upskill the knowledge and technological know hows.</p>
               {/* <a href="#"><button className="btn">About Us</button></a> */}
             </div>
           </div>

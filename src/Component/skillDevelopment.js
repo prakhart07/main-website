@@ -5,9 +5,12 @@ import img1 from '../images/Yellow White Illustrative Gradient Important Announc
 import img2 from '../images/Blue White Modern Important Announcement Instagram Post_20250831_205631_0000.png';
 import img3 from '../images/Green White Illustrative Important Announcement Instagram Post_20250831_205034_0000.png';
 import img4 from '../images/Red Orange and Yellow Modern Job Fair Flyer_20250831_211052_0000.png';
-import img5 from '../images/Turquoise and Orange Retro Illustration Now Hiring Flyer_20250831_210114_0000.png';
-import img6 from '../images/Purple and White Professional Minimalist Digital Marketing Webinar Instagra_20250901_224030_0000.png';
+import img5 from '../images/WhatsApp Image 2025-09-04 at 1.39.08 AM (1).jpeg';
+import img6 from '../images/WhatsApp Image 2025-09-04 at 1.39.08 AM.jpeg';
 import img7 from '../images/Yellow and Blue Modern Marketing Course Sale Instagram Post_20250901_233948_0000.png';
+import img8 from '../images/Yellow and Blue Modern Marketing Course Sale Instagram Post_20250901_233948_0000.png';
+import img9 from '../images/Yellow and Blue Modern Marketing Course Sale Instagram Post_20250901_233948_0000.png';
+import CourseRegistrationModal from "./courseRegistration";
 
 const events = [
   {
@@ -46,7 +49,7 @@ const events = [
     id: 5,
     category: "Interview",
     title: "Interview(Technical+HR)",
-    image: img5,
+    image: img6,
     date: "22nd September, 2025",
     time: "2-3 Weeks",
   },
@@ -89,6 +92,13 @@ const categories = ["All", "Skills", "Marketing", "Development","Interview"];
 function SkillDevelopment(){
 
     const [selectedCategory, setSelectedCategory] = useState("All");
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState("");
+
+  const openModal = (course) => {
+    setSelectedCourse(course);
+    setIsModalOpen(true);
+  };
 
   const filteredEvents =
     selectedCategory === "All"
@@ -133,17 +143,22 @@ function SkillDevelopment(){
           />
           <div className="card-body">
             <h5 className="card-title">{event.title}</h5>
-            <p className="card-text">
+            <p className="card-text fs-4">
               <i className="bi bi-calendar-event"></i> New Batch: {event.date}
               <br />
               <i className="bi bi-clock"></i> Course Duration: {event.time}
             </p>
-            <button className="btn">Register Now</button>
+            <button onClick={() => openModal(event.title)} className="btn">Apply Now</button>
           </div>
         </div>
       </div>
     ))}
   </div>
+  <CourseRegistrationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        courseName={selectedCourse}
+      />
 </div>
     </div>
     )

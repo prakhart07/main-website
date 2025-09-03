@@ -55,7 +55,7 @@ function Header(){
 
 
             <nav className={`navbar ${menuOpen ? "active" : ""}`}>
-            <i className="fas fa-bars"  onClick={toggleMenu}></i>
+            <i className={`fa ${menuOpen ? "fa-arrow-left" : "fa-bars"}`}  onClick={toggleMenu}></i>
               <ul>
                 <li><a onClick={toHomePage}>home</a></li>
                 <li><a onClick={toAboutUSPage}>about</a></li>

@@ -170,12 +170,27 @@ body::-webkit-scrollbar {
   z-index: 1100;        /* above the navbar */
   display: none;       /* make sure it's visible */
 }
+.header .fa-arrow-left {
+  position: fixed;      /* stays in one place */
+  top: 10px;
+  right: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 3rem;
+  z-index: 1100;        /* above the navbar */
+  display: none;       /* make sure it's visible */
+}
 
 /* when active, turn into X */
 .header .fa-bars.active::before {
   /* content: '✖';      */
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+}
+.header .fa-arrow-left.active::before {
+  /* content: '✖';      */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
 }
 
 .home{
@@ -196,6 +211,7 @@ body::-webkit-scrollbar {
 .home h1{
     color: #fff;
     font-size: 5.5rem;
+    margin-top: 5rem;
 }
 
 .home h2{
@@ -784,6 +800,7 @@ body::-webkit-scrollbar {
             margin-left: 2rem;
 			width: 95%;
 			height: 40px;
+            font-size: 1.5em;
 			color: #000;
 			border: 1px solid #bcbcbc;
 			border-radius: 50px;
@@ -817,6 +834,7 @@ body::-webkit-scrollbar {
 		{
             margin-left: 2rem;
 			width: 95%;
+            font-size: 2rem;
 			height: 130px;
 			color: #000;
 			border: 1px solid #bcbcbc;
@@ -1135,9 +1153,19 @@ body::-webkit-scrollbar {
         margin-top: 0.5rem;
         
     }
+    .header .fa-arrow-left{
+        display: block;
+        color: 	white;
+        margin-right: 1rem;
+        margin-top: 0.5rem;
+        
+    }
 
     .header .fa-bars:hover{
         color: #00bfff;
+    }
+    .header .fa-arrow-left:hover{
+        color: white;
     }
 
    .header .navbar {
@@ -1191,9 +1219,50 @@ body::-webkit-scrollbar {
         top: 5.8rem;
     }
 
+    .menu-toggle-icon {
+  display: block;
+}
+
+/* .navbar .menu-toggle-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1101;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px){
+  .header .fa-bars,
+  .header .fa-times {
+    display: block;
+    color: #fff;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1101;
+    font-size: 3rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  .header .fa-times {
+    color: #00bfff;
+    transform: rotate(0deg);
+    transition: color 0.3s;
+  }
+  .header .fa-times:hover {
+    color: #002e5f;
+  }
+} */
+
     .home h1{
         color: #fff;
         font-size: 4rem;
+        margin-top: 5rem;
     }
     
     .home h2{
@@ -1305,6 +1374,7 @@ body::-webkit-scrollbar {
 			width: 90%;
 			height: 20px;
 			color: #000;
+            font-size: 2rem;
 			border: 1px solid #bcbcbc;
 			border-radius: 50px;
 			outline: none;
@@ -1337,6 +1407,7 @@ body::-webkit-scrollbar {
 		{
             margin-left: 2rem;
 			width: 90%;
+            font-size: 2rem;
 			height: 110px;
 			color: #000;
 			border: 1px solid #bcbcbc;
