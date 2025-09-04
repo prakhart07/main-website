@@ -11,7 +11,7 @@ export async function saveContact(data){
 const { res, err } = await supabase
   .from('contactUs')
   .insert([
-    { name: data.name, contact:data.phone, email:data.email,message:data.message },
+    { name: data.name, contact:data.phone, email:data.email,message:data.message,purpose:data.purpose },
   ])
   .select()
   return res;

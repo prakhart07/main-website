@@ -8,7 +8,7 @@ function GetInTouch(){
 
   const Navigate=useNavigate();
 
-  const [contact,setContact]=useState({name:'',phone:'',email:'',message:''});
+  const [contact,setContact]=useState({name:'',phone:'',email:'',purpose:'',message:''});
 
   function handleOnChange(e){
     setContact({...contact,[e.target.name]:e.target.value});
@@ -54,9 +54,34 @@ toast( err.message || 'Something Went Wrong'); // error toast
           </div>
           <div className="contact-form">
             <>
+              <div className='form-group-contact'>
+               {/* <label className='form-label'>Enquiry For</label> */}
+                    <select
+                id="post"
+                name="purpose"
+                placeholder="Enquiry For"
+                className='form-group-contact'
+                value={contact.purpose}
+                onChange={handleOnChange}
+                required
+              >
+                <option value="">-- Enquiry For --</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+                <option value="Graphic Designing">Graphic Designing</option>
+                <option value="Website">Website</option>
+                <option value="E-Commerce Website">E-Commerce Website</option>
+                <option value="Custom Software">Custom Software</option>
+                <option value="Internship">Internship</option>
+                <option value="Certification Course">Certification Course</option>
+                <option value="Data Migration">Data Migration</option>
+                <option value="App Development">App Development</option>
+                <option value="Cloud Services">Cloud Services</option>
+              </select>
+              </div>
               <input type="text" name="name" placeholder="Name" className="contact-form-txt" value={contact.name} required onChange={handleOnChange} />
               <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" value={contact.phone} maxLength={10} className="contact-form-txt" onChange={handleOnChange}/>
-              <input type="email" name="email" placeholder="Email" className="contact-form-txt" value={contact.email} required onChange={handleOnChange}/>
+              <input type="email" name="email" placeholder="Email" className="contact-form-txt" value={contact.email} onChange={handleOnChange}/>
+              
               <textarea placeholder="Your Message" name="message" className="contact-form-txtarea" value={contact.message} required defaultValue={""} onChange={handleOnChange}/>
               <button className="contact-form-btn" onClick={handleSubmit}>Submit</button>
               <ToastContainer/>

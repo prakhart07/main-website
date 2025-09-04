@@ -181,6 +181,8 @@ body::-webkit-scrollbar {
   display: none;       /* make sure it's visible */
 }
 
+
+
 /* when active, turn into X */
 .header .fa-bars.active::before {
   /* content: '✖';      */
@@ -193,10 +195,11 @@ body::-webkit-scrollbar {
   font-weight: 700;
 }
 
+
 .home{
     min-height: 100vh;
     width: 100vw;
-    background-image: url(../images/home-bg.png);
+    background-image: url(../images/home-bg4.png);
     background-size: cover;
     display: flex;
     align-items: center;
@@ -210,8 +213,8 @@ body::-webkit-scrollbar {
 
 .home h1{
     color: #fff;
-    font-size: 5.5rem;
-    margin-top: 5rem;
+    font-size: 4rem;
+    margin-top: 12rem;
 }
 
 .home h2{
@@ -1262,7 +1265,7 @@ body::-webkit-scrollbar {
     .home h1{
         color: #fff;
         font-size: 4rem;
-        margin-top: 5rem;
+        margin-top: 12rem;
     }
     
     .home h2{
@@ -1737,3 +1740,89 @@ body::-webkit-scrollbar {
     }
 }
 
+.form-group-contact {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+/* Label styling */
+.form-group-contact label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #222;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Input, Select, and Textarea */
+.form-group-contact input,
+.form-group-contact select,
+.form-group-contact textarea {
+  padding: 1.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 50px;
+  font-size: 1.25rem;
+  margin-left: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* Focus State */
+.form-group-contact input:focus,
+.form-group-contact select:focus,
+.form-group-contact textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+  outline: none;
+}
+
+/* Placeholder */
+.form-group-contact input::placeholder,
+.form-group-contact textarea::placeholder {
+  color: #888;
+  font-size: 0.95rem;
+}
+
+/* Textarea resize only vertically */
+.form-group-contact textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Responsive: For small screens */
+@media (max-width: 768px) {
+  .form-group-contact {
+    margin-bottom: 1rem;
+  }
+
+  .form-group-contact input,
+  .form-group-contact select,
+  .form-group-contact textarea {
+    font-size: 0.95rem;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .form-group-contact label {
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsive: For very small screens */
+@media (max-width: 480px) {
+  .form-group-contact input,
+  .form-group-contact select,
+  .form-group-contact textarea {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .form-group-contact label {
+    font-size: 0.9rem;
+  }
+}
