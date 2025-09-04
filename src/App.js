@@ -29,8 +29,8 @@ function App() {
       <Header/>
         <Routes>
           <Route path='/' element={<Mainscreen/>}></Route>
-          <Route path='*' element={<Mainscreen/>}></Route>
-          <Route path='/home' element={<Mainscreen/>}></Route>
+          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/home" element={<Navigate to="/" />} />
           <Route path='/career' element={<Career/>}></Route>
           <Route path='/training' element={<SkillDevelopment/>}></Route>
           <Route path='/contact' element={<GetInTouch/>}></Route>
