@@ -54,6 +54,9 @@ toast( err.message || 'Something Went Wrong'); // error toast
           </div>
           <div className="contact-form">
             <>
+              <input type="text" name="name" placeholder="Name" className="contact-form-txt" value={contact.name} required onChange={handleOnChange} />
+              <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" value={contact.phone} maxLength={10} className="contact-form-txt" onChange={handleOnChange}/>
+              <input type="email" name="email" placeholder="Email" className="contact-form-txt" value={contact.email} onChange={handleOnChange}/>
               <div className='form-group-contact'>
                {/* <label className='form-label'>Enquiry For</label> */}
                     <select
@@ -65,7 +68,7 @@ toast( err.message || 'Something Went Wrong'); // error toast
                 onChange={handleOnChange}
                 required
               >
-                <option value="">-- Enquiry For --</option>
+                <option value="">----------- Select One Option-----------</option>
                 <option value="Digital Marketing">Digital Marketing</option>
                 <option value="Graphic Designing">Graphic Designing</option>
                 <option value="Website">Website</option>
@@ -78,12 +81,9 @@ toast( err.message || 'Something Went Wrong'); // error toast
                 <option value="Cloud Services">Cloud Services</option>
               </select>
               </div>
-              <input type="text" name="name" placeholder="Name" className="contact-form-txt" value={contact.name} required onChange={handleOnChange} />
-              <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" value={contact.phone} maxLength={10} className="contact-form-txt" onChange={handleOnChange}/>
-              <input type="email" name="email" placeholder="Email" className="contact-form-txt" value={contact.email} onChange={handleOnChange}/>
               
               <textarea placeholder="Your Message" name="message" className="contact-form-txtarea" value={contact.message} required defaultValue={""} onChange={handleOnChange}/>
-              <button className="contact-form-btn" onClick={handleSubmit}>Submit</button>
+              <button type='submit' className="contact-form-btn" onClick={handleSubmit}>Submit</button>
               <ToastContainer/>
             </>
           </div>
