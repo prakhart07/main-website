@@ -1,3 +1,5 @@
+import AboutUsCard from "./aboutUsCard";
+
 
 function AboutUs(){
 
@@ -21,6 +23,8 @@ function AboutUs(){
                  Digital Marketing and Graphic design which elevate the user experience.<br/>
                  Learning Programs to upskill the knowledge and technological know hows.</p>
               {/* <a href="#"><button className="btn">About Us</button></a> */}
+              <h3>Leadership</h3>
+              <AboutUsCard/>
             </div>
           </div>
         </section>

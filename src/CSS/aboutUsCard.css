@@ -1,0 +1,96 @@
+.about-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin: 20px;
+  flex-wrap: wrap; /* Responsive */
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 280px;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  
+}
+
+.team-card:hover .team-image img {
+  filter: grayscale(0%);
+}
+
+.team-image {
+  position: relative;
+}
+
+.team-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.team-image img:hover {
+  filter: grayscale(0%);
+}
+
+.linkedin-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #0077b5;
+  font-size: 24px;
+}
+
+.team-info {
+  padding: 15px;
+}
+
+.read-more {
+  background: #0077b5;
+  color: #fff;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 22px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.read-more:hover {
+  background: #005582;
+}
+
+.team-details {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Headings inside team-details */
+.team-details h1,
+.team-details h2,
+.team-details h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: blue;
+  text-align: left;
+}
+
+/* Paragraphs inside team-details */
+.team-details p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  text-align: left;
+}
