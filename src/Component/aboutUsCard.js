@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../CSS/aboutUsCard.css"; 
-import prakharImage from "../images/me.jpeg";
+import prakharImage from "../images/prakhar.jpeg";
 
 const AboutUsCard = () => {
   const [showDetails, setShowDetails] = useState(false);
