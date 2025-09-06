@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../CSS/newsModal.css";
 import img from '../images/hire.jpeg'
+import { Navigate } from "react-router-dom";
 
 const NewsModal = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const Navigate=Navigate();
 
   useEffect(() => {
     // Open modal automatically when page loads
@@ -13,6 +15,10 @@ const NewsModal = () => {
   const closeModal = () => {
     setIsOpen(false);
   };
+
+  function onClickImage(){
+    Navigate('/jobs');
+  }
 
   return (
     <>
@@ -26,6 +32,7 @@ const NewsModal = () => {
               src={img} // 👉 replace with your image
               alt="Latest News"
               className="news-image"
+              onClick={onClickImage}
             />
             <h2 className="news-title">Latest News</h2>
             <p className="news-text">
