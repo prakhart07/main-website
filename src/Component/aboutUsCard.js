@@ -43,13 +43,13 @@ const AboutUsCard = () => {
             <strong> <i class="fa fa-linkedin fa-lg" href="https://www.linkedin.com/in/prakhar-tripathi07"></i> &nbsp;  | &nbsp;<i class="fa fa-envelope fa-lg" ></i></strong> 
           </p>
           <p>
-            Prakhar is an experienced leader in technology and business
-            strategy. With years of expertise in building innovative solutions,
-            he drives the vision and direction of the company.
+            Prakhar leads at the crossroads of technology and business outcomes, turning strategy into products that ship and scale. 
+            With hands‑on experience architecting modern solutions,
+             he sets the vision, aligns teams around clear goals, and keeps execution focused on measurable impact.
           </p>
           <p>
-            His focus is on empowering businesses through modern IT solutions,
-            fostering a culture of innovation, and delivering impactful results.
+            His priorities include empowering organizations with secure, scalable IT, cultivating a culture of curiosity and high standards, 
+            and delivering results clients can see—in faster launches, better performance, and smarter decisions
           </p>
         </div>
       )}
