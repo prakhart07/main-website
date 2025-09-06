@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "../CSS/newsModal.css";
 import img from '../images/hire.jpeg'
-import { Navigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const NewsModal = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const Navigate=Navigate();
-
+  const Navigate=useNavigate();
+  
   useEffect(() => {
     // Open modal automatically when page loads
     setIsOpen(true);
   }, []);
-
+  
   const closeModal = () => {
     setIsOpen(false);
   };
